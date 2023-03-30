@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="text" id="input">
+    <button id="btn">btn</button>
+    <div id="div">
+
+    </div>
+</body>
+<style>
+    #div{
+        height: 100px;
+        width: 100px;
+        background-color: rgb(0,0,0);
+    }
+</style>
+<script type="text/javascript" >
+    let btn=document.getElementById('btn')
+   
+    let color =document.getElementById('div')
+    let rgb
+    btn.onclick=function(){
+        let input=document.getElementById('input').value
+       
+        //0绿
+        //100红 255，0
+        if(input<=50&&input>=0){
+            rgb='rgb('+Math.round(input*255/50)+',255,0)'
+        }
+        if(input>50&&input<=100){
+            rgb='rgb(255,'+Math.round((100-input)*255/50)+',0)'
+        }
+        color.style.backgroundColor=rgb
+    }
+    
+</script>
+</html>
